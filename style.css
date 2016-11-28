@@ -1,0 +1,29 @@
+body {
+    background: #b71c1c;
+    font-family: sans-serif;
+}
+
+.pokemon {
+    margin: 8px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.details {
+    margin: 8px;
+    margin-bottom: 12px;
+    padding: 20px;
+    background: white;
+    /*background: #eee;*/
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}

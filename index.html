@@ -1,0 +1,43 @@
+<html ng-app="pokeApp">
+	<head>
+		<title>Pokedex</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body ng-controller="pokeController">
+		<div class="center">
+			<h1 style="color: white">Pokedex</h1>
+		</div>
+
+		<page-directive></page-directive>
+		<br>
+
+		<div class="details ng-hide" ng-show="pokeInfo">
+			ID: {{pokeInfo.id}}<br>
+			Name: <span class="capitalize">{{pokeInfo.name}}</span><br>
+			Sprites: <div>
+				<img ng-src="{{pokeInfo.sprites.back_default}}" alt="back"></img>
+				<img ng-src="{{pokeInfo.sprites.front_default}}" alt="front"></img>
+				<img ng-src="{{pokeInfo.sprites.back_shiny}}" alt="back"></img>
+				<img ng-src="{{pokeInfo.sprites.front_shiny}}" alt="back"></img>
+			</div><br>
+			Height: {{pokeInfo.height}}<br>
+			Weight: {{pokeInfo.weight}}
+		</div>
+
+
+		<div ng-repeat="mon in pokemon" class="pokemon">
+			<p><span class="capitalize">{{mon.name}}</span></p>
+			<button ng-click="getMore(mon.url)">More Info</button>
+		</div>
+		<br>
+
+		<page-directive></page-directive>
+
+
+				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+		<script src="app.js"></script>
+		<script src="controller.js"></script>
+		<script src="service.js"></script>
+		<script src="pageDirective.js"></script>
+	</body>
+</html>
